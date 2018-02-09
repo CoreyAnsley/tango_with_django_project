@@ -5,12 +5,11 @@ from rango.models import Page
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from rango.models import Category
-
 def show_category(request, category_name_slug):
     # Create a context dictionary which we can pass
     # to the template rendering engine.
     context_dict = {}
+
     try:
         # Can we find a category name slug with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
@@ -45,7 +44,3 @@ def index(request):
 
     # Render the response and send it back!
     return render(request, 'rango/index.html', context=context_dict)
-
-
-
-
